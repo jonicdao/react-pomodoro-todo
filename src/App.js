@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
-import ReactFcctest from 'react-fcctest'
 
 import { useInterval } from './useInterval'
 import TimeSet from './TimeSet'
 import Timer from './Timer'
 import Controls from './Controls'
 
-import alarm from '../sounds/alarm.mp3'
+import alarm from './sounds/alarm.mp3'
 
 const App = () => {
   const [breakVal, setBreakVal] = useState(5)
@@ -26,7 +25,7 @@ const App = () => {
     if (time === 0 && mode === 'session') {
       beep.current.play()
       setMode('break')
-      setTime(breakval * 60 * 1000)
+      setTime(breakVal * 60 * 1000)
     } else if (time === 0 && mode === 'break') {
       beep.current.play()
       setMode('session')
@@ -62,7 +61,6 @@ const App = () => {
           <TimeSet type={'Session'} value={[sessionVal, setSessionVal]} />
         </div>
       </main>
-      <ReactFcctest />
       <audio id="beep" src={alarm} ref={beep} />
     </div>
   )

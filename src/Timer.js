@@ -6,7 +6,7 @@ const Timer = ({ currentMode, currentTime}) => {
     const [time] = currentTime
     return (
         <>
-            <h2 id="timer-label">{mode === 'session' ? 'Session' : 'Break'}></h2>
+            <h2 id="timer-label">{mode === 'session' ? 'Session' : 'Break'}</h2>
             <h3 id="time-left">{moment(time).format('mm:ss')}</h3>
         </>
     )
