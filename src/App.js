@@ -4,6 +4,9 @@ import TimeSet from './TimeSet'
 import Timer from './Timer'
 import Controls from './Controls'
 import alarm from './sounds/alarm.mp3'
+import './App.css'
+
+// Pomodoro App
 
 const App = () => {
   const [breakVal, setBreakVal] = useState(5)
@@ -44,7 +47,7 @@ const App = () => {
   return (
     <div className="container">
       <header>
-        <h1>Pomodoro Timer and Todo List</h1>
+        <h1>Time my work!</h1>
       </header>
       <main>
         <div className="time-wrapper">
@@ -60,12 +63,13 @@ const App = () => {
         </div>
       </main>
       <audio id="beep" src={alarm} ref={beep} />
+      <hr />
       <TodoApp />
     </div>
   )
 }
 
-
+// Todo App
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div
@@ -138,6 +142,7 @@ function TodoApp() {
 
   return (
     <div className="app">
+      <h1>Things I have to do</h1>
       <div className="todo-list">
         {todos.map(( todo, index) =>
         <Todo
